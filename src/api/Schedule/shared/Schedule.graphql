@@ -1,6 +1,6 @@
 type Schedule {
     id: Int!
-    userId: Int!
+    userId: User!
     date: String!
     startTime: String
     endTime: String

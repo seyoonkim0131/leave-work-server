@@ -7,6 +7,7 @@
   "author": "SeyoonKim <rlatpdbs@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/node": "^13.9.0",
     "babel-runtime": "^6.26.0",
     "gql-merge": "^0.0.6",
@@ -17,11 +18,13 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "predev": "yarn run types",
     "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "class-validator": "^0.11.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
