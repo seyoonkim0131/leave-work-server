@@ -1,0 +1,9 @@
+type Schedule {
+    id: Int!
+    userId: Int!
+    date: String!
+    startTime: String
+    endTime: String
+    overTime: String
+    break: String!
+}

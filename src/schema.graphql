@@ -1,9 +1,23 @@
-type Query {
-  sayBye: String!
-  sayHello(name: String!): sayHelloResponse!
+type Schedule {
+  id: Int!
+  userId: Int!
+  date: String!
+  startTime: String
+  endTime: String
+  overTime: String
+  break: String!
 }
 
-type sayHelloResponse {
-  text: String!
-  error: Boolean!
+type User {
+  id: Int!
+  email: String!
+  name: String!
+  startH: String
+  startM: String
+  endH: String
+  endM: String
+  salary: String
+  password: String!
+  createdAt: String!
+  updatedAt: String
 }
