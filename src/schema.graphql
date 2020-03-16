@@ -1,6 +1,6 @@
 type Schedule {
   id: Int!
-  userId: Int!
+  userId: User!
   date: String!
   startTime: String
   endTime: String
@@ -23,5 +23,22 @@ type User {
 }
 
 type Query {
-  user: User
+  user: User!
+}
+
+type SignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation {
+  SignIn(email: String!, password: String!): SignInResponse!
+  SignUp(email: String!, name: String!, password: String!, startH: String, startM: String, endH: String, endM: String, salary: String): SignUpResponse!
+}
+
+type SignUpResponse {
+  ok: Boolean!
+  error: String
+  token: String
 }

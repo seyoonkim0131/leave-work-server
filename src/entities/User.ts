@@ -16,19 +16,19 @@ class User extends BaseEntity {
     @Column({type: "text"})
     name: string;
 
-    @Column({type: "text", default: "09"})
+    @Column({type: "text", default: "09", nullable: true})
     startH: string;
 
-    @Column({type: "text", default: "00"})
+    @Column({type: "text", default: "00", nullable: true})
     startM: string;
 
-    @Column({type: "text", default: "18"})
+    @Column({type: "text", default: "18", nullable: true})
     endH: string;
 
-    @Column({type: "text", default: "00"})
+    @Column({type: "text", default: "00", nullable: true})
     endM: string;
 
-    @Column({type: "text"})
+    @Column({type: "text", nullable: true})
     salary: string;
 
     @Column({type: "text"})
