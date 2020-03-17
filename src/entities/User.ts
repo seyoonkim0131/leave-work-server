@@ -3,11 +3,11 @@ import bcrypt from "bcrypt";
 import Schedule from "./Schedule";
 
 
-const BCRYPT_ROUNDS = 10
+const BCRYPT_ROUNDS = 10;
 @Entity()
 class User extends BaseEntity {
     @PrimaryGeneratedColumn()
-    @OneToMany(type => Schedule, schedule => schedule.userId)
+    // @OneToMany(type => Schedule, schedule => schedule.userId)
     id: number;
     
     @Column({type: "text", unique: true})
@@ -34,6 +34,9 @@ class User extends BaseEntity {
     @Column({type: "text"})
     password: string;
 
+    @OneToMany(type => Schedule, schedule => schedule.userId)
+    schedule: Schedule[]
+
     @CreateDateColumn()
     createdAt: string;
 
@@ -41,7 +44,7 @@ class User extends BaseEntity {
     updatedAt: string;
 
     public comparePassword(password: string): Promise<boolean> {
-        return bcrypt.compare(password, this.password)
+        return bcrypt.compare(password, this.password);
     }
 
     private hashPassword(password: string): Promise<string>  {

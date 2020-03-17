@@ -1,6 +1,20 @@
+type GetMyScheduleResponse {
+  ok: Boolean!
+  error: String
+  schedule: [Schedule]
+}
+
+type Query {
+  GetMySchedule: GetMyScheduleResponse!
+  schedule: Schedule
+  GetMyProfile: GetMyProfileResponse!
+  user: User!
+}
+
 type Schedule {
   id: Int!
-  userId: User!
+  userId: Int!
+  user: User!
   date: String!
   startTime: String
   endTime: String
@@ -14,11 +28,6 @@ type GetMyProfileResponse {
   user: User
 }
 
-type Query {
-  GetMyProfile: GetMyProfileResponse!
-  user: User!
-}
-
 type User {
   id: Int!
   email: String!
@@ -29,6 +38,7 @@ type User {
   endM: String
   salary: String
   password: String!
+  schedule: [Schedule]
   createdAt: String!
   updatedAt: String
 }

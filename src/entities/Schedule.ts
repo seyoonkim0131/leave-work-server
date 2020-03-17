@@ -8,8 +8,11 @@ class Schedule extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
+    @Column({nullable: true})
+    userId: number;
+
     @ManyToOne(type => User, user => user.id)
-    userId: User
+    user: User
 
     @Column({type: "text"})
     date: string;

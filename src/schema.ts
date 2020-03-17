@@ -9,7 +9,7 @@ const allTypes : any = fileLoader(
 
 const allResolvers = fileLoader(
     path.join(__dirname, "./api/**/*.resolvers.*")
-  );
+);
 
 const mergedTypes = mergeTypes(allTypes);
 const mergedResolvers = mergeResolvers(allResolvers);

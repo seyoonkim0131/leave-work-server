@@ -1,9 +1,14 @@
 type Schedule {
     id: Int!
-    userId: User!
+    userId: Int!
+    user: User!
     date: String!
     startTime: String
     endTime: String
     overTime: String
     break: String!
+}
+
+type Query {
+    schedule: Schedule
 }

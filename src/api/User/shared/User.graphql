@@ -8,6 +8,7 @@ type User {
     endM: String
     salary: String
     password: String!
+    schedule: [Schedule]
     createdAt: String!
     updatedAt: String
 }
