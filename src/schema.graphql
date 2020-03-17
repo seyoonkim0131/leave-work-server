@@ -8,6 +8,17 @@ type Schedule {
   break: String!
 }
 
+type GetMyProfileResponse {
+  ok: Boolean!
+  error: String
+  user: User
+}
+
+type Query {
+  GetMyProfile: GetMyProfileResponse!
+  user: User!
+}
+
 type User {
   id: Int!
   email: String!
@@ -22,10 +33,6 @@ type User {
   updatedAt: String
 }
 
-type Query {
-  user: User!
-}
-
 type SignInResponse {
   ok: Boolean!
   error: String
@@ -35,10 +42,16 @@ type SignInResponse {
 type Mutation {
   SignIn(email: String!, password: String!): SignInResponse!
   SignUp(email: String!, name: String!, password: String!, startH: String, startM: String, endH: String, endM: String, salary: String): SignUpResponse!
+  UpdateMyProfile(name: String, startH: String, startM: String, endH: String, endM: String, salary: String, password: String): UpdateMyProfileResponse!
 }
 
 type SignUpResponse {
   ok: Boolean!
   error: String
   token: String
+}
+
+type UpdateMyProfileResponse {
+  ok: Boolean!
+  error: String
 }
