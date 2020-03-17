@@ -1,0 +1,9 @@
+type GetMyScheduleResponse {
+    ok: Boolean!
+    error: String
+    schedule: [Schedule]
+}
+
+type Query {
+    GetMySchedule: GetMyScheduleResponse!
+}
